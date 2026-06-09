@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
+<title>Reserve — HINATA 日向</title>
+<meta name="description" content="Hold a seat at the HINATA counter. Two seatings nightly, Tuesday through Sunday.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/design.css?v=2">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav__brand" href="index.html"><b>HINATA</b><span>日向</span></a>
+  <ul class="nav__links">
+    <li><a href="omakase.html">Omakase</a></li>
+    <li><a href="story.html">Story</a></li>
+    <li><a href="visit.html">Visit</a></li>
+    <li><a class="nav__cta" href="reserve.html" aria-current="page">Reserve</a></li>
+  </ul>
+  <button class="nav__burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<header class="hero hero--page">
+  <div class="hero__img"><img src="img/hero-reserve.jpg" alt="The minimal wood-slat counter room" fetchpriority="high"></div>
+  <div class="hero__scrim"></div>
+  <div class="railmark">予 約 · R E S E R V E</div>
+  <div class="hero__inner">
+    <p class="eyebrow">予約 — Hold a seat</p>
+    <h1 class="display">Ten seats.<br>Two seatings.</h1>
+    <p class="hero__sub">Choose your evening below. Seats are released two weeks ahead and held with a card; the counter fills quickly.</p>
+  </div>
+</header>
+
+<section class="band band--bone">
+  <div class="wrap">
+    <div id="resv" class="resv">
+      <form class="resv__panel" id="resvForm">
+        <div class="field">
+          <label>① Choose a seating type</label>
+          <div class="seatgrid">
+            <div class="seat" data-seat="counter"><b>Counter Omakase</b><small>13 courses · chef-led · $245</small></div>
+            <div class="seat" data-seat="table"><b>Table Service</b><small>8-course tasting · $185</small></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>② Choose a date <span class="muted" style="text-transform:none;letter-spacing:0;font-weight:400">— closed Mondays</span></label>
+          <div class="daystrip" id="days"></div>
+        </div>
+
+        <div class="field">
+          <label>③ Choose a seating time</label>
+          <div class="slots" id="slots"></div>
+        </div>
+
+        <div class="field">
+          <label>④ Party size</label>
+          <div class="stepper">
+            <button type="button" id="p-dec" aria-label="Fewer guests">–</button>
+            <output id="party">2</output>
+            <button type="button" id="p-inc" aria-label="More guests">+</button>
+            <span class="muted" style="font-size:.85rem">Counter seats up to 6 together; tables up to 8.</span>
+          </div>
+        </div>
+
+        <hr class="rule" style="margin:.5rem 0 1.8rem">
+
+        <div class="field">
+          <label>⑤ Your details</label>
+          <div class="inrow">
+            <input class="inp" id="name" type="text" placeholder="Full name" autocomplete="name">
+            <input class="inp" id="email" type="email" placeholder="Email" autocomplete="email">
+          </div>
+          <div class="inrow" style="margin-top:1.2rem">
+            <input class="inp" id="phone" type="tel" placeholder="Phone" autocomplete="tel">
+            <input class="inp" id="notes" type="text" placeholder="Allergies / dietary notes">
+          </div>
+        </div>
+
+        <button class="btn btn--solid" id="book" type="submit" style="width:100%;justify-content:center">Hold my seats <span class="arw">→</span></button>
+        <div class="resv__confirm" id="confirm"></div>
+      </form>
+
+      <aside class="resv__summary">
+        <h3>Your evening</h3>
+        <div class="sumrow"><b>Seating</b><span class="v" id="s-seat">Counter Omakase</span></div>
+        <div class="sumrow"><b>Date</b><span class="v" id="s-date">—</span></div>
+        <div class="sumrow"><b>Time</b><span class="v" id="s-time">—</span></div>
+        <div class="sumrow"><b>Party</b><span class="v" id="s-party">2 guests</span></div>
+        <div class="sumrow"><b>Estimated</b><span class="v" id="s-price">—</span></div>
+        <p class="muted" style="font-size:.82rem;margin-top:1.2rem">A 48-hour cancellation notice is asked; the full tasting is charged for no-shows. Seats are held, not charged, at booking.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <div><p class="foot__mark">HINATA<span>.</span></p><p style="margin-top:1.2rem;max-width:34ch">A ten-seat counter omakase. 325 South Old Woodward, Birmingham, Michigan.</p></div>
+      <div><h5>Visit</h5><a href="omakase.html">The Omakase</a><a href="story.html">Story</a><a href="visit.html">Hours &amp; Location</a><a href="reserve.html">Reserve</a></div>
+      <div><h5>Contact</h5><a href="tel:+12485405900">(248) 540-5900</a><a href="mailto:counter@hinata.example">counter@hinata.example</a><a href="visit.html">Tue–Sun · two seatings</a></div>
+    </div>
+    <div class="foot__bot"><span>© 2026 HINATA Omakase. Crafted with the season.</span><span><a href="legal.html">Privacy</a> · <a href="legal.html#terms">Terms</a></span></div>
+  </div>
+</footer>
+
+<script src="js/nav.js?v=1"></script>
+<script src="js/reveal.js?v=1"></script>
+<script src="js/reserve.js?v=1"></script>
+</body>
+</html>
